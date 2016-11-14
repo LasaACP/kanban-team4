@@ -41,4 +41,18 @@ class Complex
 			}
 
 		}
+
+		double getReal() {
+			return this->real;
+		}
+		double getImag() {
+			return this->imag;
+		}
+		
+		void setReal(double a) {
+			this->real = a;
+		}
+		void setImag(double a) {
+			this->imag = a;
+		}
 };
