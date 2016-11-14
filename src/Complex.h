@@ -6,6 +6,11 @@ class Complex {
 		double real, imag;
 
 	public:
+	/* CONSTRUCTORS */
+		Complex();
+		Complex(double);
+		Complex(double,double);
+
 	/* READ WRITE */
 
 		void setReal(double);
