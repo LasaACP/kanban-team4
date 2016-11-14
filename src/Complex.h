@@ -211,6 +211,14 @@ class Complex {
 			void* operator new[] (size_t);
 			void operator delete(void*);
 			void operator delete[](void*);
+
+	/* MATH FUNCTIONS */
+
+		Complex pow(int);
+		Complex pow(long int);
+		Complex pow(float);
+		Complex pow(double);
+		Complex pow(Complex);
 }
 
 #endif
