@@ -214,11 +214,63 @@ class Complex {
 
 	/* MATH FUNCTIONS */
 
-		Complex pow(int);
-		Complex pow(long int);
-		Complex pow(float);
-		Complex pow(double);
-		Complex pow(Complex);
+		/* Exponents */
+
+			Complex sqrt();
+			Complex cbrt();
+			Complex hypot();
+
+			Complex pow(int);
+			Complex pow(long int);
+			Complex pow(float);
+			Complex pow(double);
+			Complex pow(Complex);
+	
+			static Complex exp(Complex);
+			static Complex exp2(Complex);
+
+			static Complex log(Complex);
+			static Complex log10(Complex);
+			static Complex log2(Complex);
+			static Complex logb(float,Complex);
+
+		/* Trig */
+	
+			Complex cos();
+			Complex sin();
+			Complex tan();
+			
+			Complex acos();
+			Complex asin();
+			Complex atan();
+
+		/* Hyperbolic */
+
+			Complex cosh();
+			Complex sinh();
+			Complex tanh();
+			
+			Complex acosh();
+			Complex asinh();
+			Complex atanh();
+
+		/* Classification */
+
+			bool isInfinite();
+			bool isNaN();
+
+		/* Complex */
+
+			double polarR();
+			double polarPhi();
+
+			Complex rect(double r, double phi);
+
+		/* Constants */
+
+			static double E;
+			static double PI;
+		
 }
 
 #endif
