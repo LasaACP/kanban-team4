@@ -10,6 +10,7 @@ class Complex {
 		Complex();
 		Complex(double);
 		Complex(double,double);
+		Complex(std::string);
 
 	/* READ WRITE */
 
