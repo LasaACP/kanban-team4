@@ -3,8 +3,17 @@
 
 class Complex {
 	private:
-		double real, imaginary;
+		double real, imag;
+
 	public:
+	/* READ WRITE */
+
+		void setReal(double);
+		void setImag(double);
+
+		double getReal();
+		double getImag();
+
 	/* OPERATORS */
 	
 		/* Basic assignment operators */
@@ -216,9 +225,9 @@ class Complex {
 
 		/* Exponents */
 
-			Complex sqrt();
-			Complex cbrt();
-			Complex hypot();
+			static Complex sqrt(Complex);
+			static Complex cbrt(Complex);
+			static Complex hypot(Complex);
 
 			Complex pow(int);
 			Complex pow(long int);
@@ -236,23 +245,23 @@ class Complex {
 
 		/* Trig */
 	
-			Complex cos();
-			Complex sin();
-			Complex tan();
+			static Complex cos(Complex);
+			static Complex sin(Complex);
+			static Complex tan(Complex);
 			
-			Complex acos();
-			Complex asin();
-			Complex atan();
+			static Complex acos(Complex);
+			static Complex asin(Complex);
+			static Complex atan(Complex);
 
 		/* Hyperbolic */
 
-			Complex cosh();
-			Complex sinh();
-			Complex tanh();
+			static Complex cosh(Complex);
+			static Complex sinh(Complex);
+			static Complex tanh(Complex);
 			
-			Complex acosh();
-			Complex asinh();
-			Complex atanh();
+			static Complex acosh(Complex);
+			static Complex asinh(Complex);
+			static Complex atanh(Complex);
 
 		/* Classification */
 
@@ -264,7 +273,7 @@ class Complex {
 			double polarR();
 			double polarPhi();
 
-			Complex rect(double r, double phi);
+			static Complex rect(double r, double phi);
 
 		/* Constants */
 
