@@ -14,11 +14,19 @@ class Complex {
 
 	/* READ WRITE */
 
-		void setReal(double);
-		void setImag(double);
+		void setReal(double a) {
+			this->real = a;
+		};
+		void setImag(double a) {
+			this->imag = a;
+		};
 
-		double getReal();
-		double getImag();
+		double getReal() {
+			return this->real;
+		};
+		double getImag() {
+			return this->imag;
+		};
 
 	/* OPERATORS */
 	
@@ -286,6 +294,6 @@ class Complex {
 			static double E;
 			static double PI;
 		
-}
+};
 
 #endif
