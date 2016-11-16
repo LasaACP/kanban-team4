@@ -48,11 +48,23 @@ class Complex {
 		
 		/* Basic arithmetic operators */
 
-			Complex operator+(int);
-			Complex operator+(long int);
-			Complex operator+(float);
-			Complex operator+(double);
-			Complex operator+(const Complex&);
+			Complex operator+(int a) {
+				setReal(getReal+a);	
+			}
+			Complex operator+(long a, int b) {
+				setReal(getReal+a);
+				setImag(getImag+b);
+			}
+			Complex operator+(float a) {
+				setReal(getReal+a);	
+			}
+			Complex operator+(double a) {
+				setReal(getReal+a);	
+			}
+			Complex operator+(const Complex& a) {
+				setReal(getReal+a.getReal());
+				setImag(getImag+a.getImag());
+			}
 
 			Complex operator-(int);
 			Complex operator-(long int);
