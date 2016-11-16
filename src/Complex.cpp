@@ -34,3 +34,4 @@ Complex::Complex(std::string str) {
 	}
 
 }
+int main(){}

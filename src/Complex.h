@@ -1,6 +1,9 @@
 #ifndef COMPLEX_H
 #define COMPLEX_H
 
+#include <string>
+#include <cstdlib>
+
 class Complex {
 	private:
 		double real, imag;
