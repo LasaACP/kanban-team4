@@ -108,6 +108,37 @@ Complex::Complex(std::string str) {
 		return false;
 	}
 	//
+	Complex:: bool operator!=(int a) {
+			if(getReal()!=a || getImag()!=0) {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator!=(long a, int b) {
+			if(getReal()!=a || getImag()!=b) {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator!=(float a) {
+			if(getReal()!=a || getImag()!=0) {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator!=(double a) {
+			if(getReal()!=a || getImag()!=0) {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator!=(Complex& a) {
+			if(getReal()!=a.getReal() || getImag()!=a.getImag()) {
+			return true;
+		}
+		return false;
+	}
+	//
 	Complex:: bool operator>(int a) {
 		if(getReal()>a} {
 			return true;
