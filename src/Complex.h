@@ -64,7 +64,7 @@ class Complex {
 				this.setReal(this.getReal()-double(a));
 				return this;
 			}
-			Complex operator-(float)
+			Complex operator-(float a)
 			{
 				this.setReal(this.getReal()-double(a));
 				return this;
