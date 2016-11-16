@@ -34,4 +34,78 @@ Complex::Complex(std::string str) {
 	}
 
 }
+
+
+//assignment operators
+
+	Complex:: void operator=(int a) {
+		setReal(a);
+	}
+	Complex:: void operator=(long a,int b) {
+		setReal(a);
+		setImag(b);
+	}
+	Complex:: void operator=(float a) {
+		setReal(a);
+	}
+	Complex:: void operator=(double a) {
+		setReal(a);
+	}
+	Complex:: void operator=(const Complex& a) {
+		setReal(a.getReal());
+		setImag(a.getImag());
+	}
+
+//basic arithematic operators
+
+	Complex:: Complex operator+(int a) {
+		setReal(getReal+a);	
+	}
+	Complex:: Complex operator+(long a, int b) {
+		setReal(getReal+a);
+		setImag(getImag+b);
+	}
+	Complex:: Complex operator+(float a) {
+		setReal(getReal+a);	
+	}
+	Complex:: Complex operator+(double a) {
+		setReal(getReal+a);	
+	}
+	Complex:: Complex operator+(const Complex& a) {
+		setReal(getReal+a.getReal());
+		setImag(getImag+a.getImag());
+	}
+
+//basic comparison operators
+	Complex:: bool operator==(int a) {
+			if(getReal()==a && getImag()==0) {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator==(long a, int b) {
+			if(getReal()==a && getImag()==b) {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator==(float a) {
+			if(getReal()==a && getImag()==0) {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator==(double a) {
+			if(getReal()==a && getImag()==0) {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator==(Complex& a) {
+			if(getReal()==a.getReal() && getImag()==a.getImag()) {
+			return true;
+		}
+		return false;
+	}
+
 int main(){}
