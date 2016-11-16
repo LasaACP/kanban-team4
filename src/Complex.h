@@ -64,7 +64,7 @@ class Complex {
 			Complex operator*(long int);
 			Complex operator*(float);
 			Complex operator*(double);
-			Complex operator*(const Complex&);
+			Complex operator*(Complex&);
 			
 			Complex operator/(int);
 			Complex operator/(long int);
