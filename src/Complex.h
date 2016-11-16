@@ -52,18 +52,18 @@ class Complex {
 			Complex operator+(long int);
 			Complex operator+(float);
 			Complex operator+(double);
-			Complex operator+(const Complex& ha, Complex& inl)
-			{
-				inl.setImag(inl.getImag() + ha.getIma());
-				inl.setReal(ha.getReal() + inl.getReal());
-				return inl;
-			}
+			Complex operator+(const Complex&);
 
 			Complex operator-(int);
 			Complex operator-(long int);
 			Complex operator-(float);
 			Complex operator-(double);
-			Complex operator-(const Complex&);
+			Complex operator-(const Complex& ha, Complex& inl)
+			{
+				inl.setImag(inl.getImag() - ha.getIma());
+				inl.setReal(ha.getReal() - inl.getReal());
+				return inl;
+			}
 			
 			Complex operator*(int);
 			Complex operator*(long int);
