@@ -3,6 +3,7 @@
 
 #include <string>
 #include <cstdlib>
+#include <iostream>
 
 class Complex {
 	private:
@@ -24,10 +25,10 @@ class Complex {
 			this->imag = a;
 		};
 
-		double getReal() {
+		double getReal() const {
 			return this->real;
 		};
-		double getImag() {
+		double getImag() const {
 			return this->imag;
 		};
 
@@ -35,11 +36,11 @@ class Complex {
 	
 		/* Basic assignment operators */
 
-			void operator=(int);
-			void operator=(long int);
-			void operator=(float);
-			void operator=(double);
-			void operator=(const Complex&);
+			Complex& operator=(int);
+			Complex& operator=(long int);
+			Complex& operator=(float);
+			Complex& operator=(double);
+			Complex& operator=(Complex&);
 
 		/* Integer promotion and negation */
 
@@ -52,13 +53,13 @@ class Complex {
 			Complex operator+(long int);
 			Complex operator+(float);
 			Complex operator+(double);
-			Complex operator+(const Complex&);
+			Complex operator+(Complex&);
 
 			Complex operator-(int);
 			Complex operator-(long int);
 			Complex operator-(float);
 			Complex operator-(double);
-			Complex operator-(const Complex&);
+			Complex operator-(Complex&);
 			
 			Complex operator*(int);
 			Complex operator*(long int);
@@ -70,13 +71,13 @@ class Complex {
 			Complex operator/(long int);
 			Complex operator/(float);
 			Complex operator/(double);
-			Complex operator/(const Complex&);
+			Complex operator/(Complex&);
 			
 			Complex operator%(int);
 			Complex operator%(long int);
 			Complex operator%(float);
 			Complex operator%(double);
-			Complex operator%(const Complex&);
+			Complex operator%(Complex&);
 
 		/* Increment/decrement */
 
@@ -134,101 +135,49 @@ class Complex {
 
 		/* Bitwise */
 
-			Complex operator~();
-
-			Complex operator&(int);
-			Complex operator&(long int);
-			Complex operator&(float);
-			Complex operator&(double);
-			Complex operator&(Complex);
-
-			Complex operator|(int);
-			Complex operator|(long int);
-			Complex operator|(float);
-			Complex operator|(double);
-			Complex operator|(Complex);
-
-			Complex operator^(int);
-			Complex operator^(long int);
-			Complex operator^(float);
-			Complex operator^(double);
-			Complex operator^(Complex);
-
-			Complex operator<<(int);
-			Complex operator<<(long int);
-			Complex operator<<(float);
-			Complex operator<<(double);
-			Complex operator<<(Complex);
-
-			Complex operator>>(int);
-			Complex operator>>(long int);
-			Complex operator>>(float);
-			Complex operator>>(double);
-			Complex operator>>(Complex);
-
+			// Doesn't make sense
+			//Complex operator~();
+			//Complex operator&(Complex&);
+			//Complex operator|(Complex&);
+			//Complex operator^(Complex&);
+			//Complex operator<<(Complex);
+			//Complex operator>>(Complex);
+			
 		/* Compound assignment */
 
 			Complex operator+=(int);
 			Complex operator+=(long int);
 			Complex operator+=(float);
 			Complex operator+=(double);
-			Complex operator+=(const Complex&);
+			Complex operator+=(Complex&);
 
 			Complex operator-=(int);
 			Complex operator-=(long int);
 			Complex operator-=(float);
 			Complex operator-=(double);
-			Complex operator-=(const Complex&);
+			Complex operator-=(Complex&);
 			
 			Complex operator*=(int);
 			Complex operator*=(long int);
 			Complex operator*=(float);
 			Complex operator*=(double);
-			Complex operator*=(const Complex&);
+			Complex operator*=(Complex&);
 			
 			Complex operator/=(int);
 			Complex operator/=(long int);
 			Complex operator/=(float);
 			Complex operator/=(double);
-			Complex operator/=(const Complex&);
+			Complex operator/=(Complex&);
 			
 			Complex operator%=(int);
 			Complex operator%=(long int);
 			Complex operator%=(float);
 			Complex operator%=(double);
-			Complex operator%=(const Complex&);
-
-			Complex operator|=(int);
-			Complex operator|=(long int);
-			Complex operator|=(float);
-			Complex operator|=(double);
-			Complex operator|=(Complex);
-
-			Complex operator^=(int);
-			Complex operator^=(long int);
-			Complex operator^=(float);
-			Complex operator^=(double);
-			Complex operator^=(Complex);
-
-			Complex operator<<=(int);
-			Complex operator<<=(long int);
-			Complex operator<<=(float);
-			Complex operator<<=(double);
-			Complex operator<<=(Complex);
-
-			Complex operator>>=(int);
-			Complex operator>>=(long int);
-			Complex operator>>=(float);
-			Complex operator>>=(double);
-			Complex operator>>=(Complex);
+			Complex operator%=(Complex&);
 
 		/* Pointer */
 			
-			Complex& operator[](int);
-			Complex& operator[](long int);
-			Complex& operator[](float);
-			Complex& operator[](double);
-			Complex& operator[](Complex);
+			double operator[](int);
 
 		/* Other */
 

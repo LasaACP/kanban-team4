@@ -91,7 +91,35 @@ Complex Complex::operator--(int){
     return copy;   // return old value
 }
 
+/* Stream insertion */
 
-int main(){
-	
+std::ostream &operator<<(std::ostream &output, const Complex& a) {
+	output << a.getReal() << "+" << a.getImag() << "i";
+	return output;
+}
+std::istream &operator>>(std::istream &input, Complex& a) {
+	double real, imag;
+	input >> real >> imag;
+	a.setReal(real);
+	a.setImag(imag);
+	return input;
+}
+
+double Complex::operator[](int i) {
+	if (i == 0) {
+		return this->getReal();
+	} else if (i == 1) {
+		return this->getImag();
+	} else {
+		return 0;
+	}
+}
+
+Complex Complex::operator-() {
+	return Complex(-this->getReal(), -this->getImag());
+}
+
+int main() {
+	Complex a(3,4);
+	std::cout << -(++a);
 }
