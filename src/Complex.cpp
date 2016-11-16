@@ -1,6 +1,9 @@
 #include <iostream>
 #include <string>
+#include <cmath>
 #include "Complex.h"
+
+#define iunit Complex(0,1);
 
 Complex::Complex() {
 	real = 0;
@@ -93,11 +96,11 @@ Complex Complex::operator--(int){
 
 /* Stream insertion */
 
-std::ostream &operator<<(std::ostream &output, const Complex& a) {
+std::ostream& operator<<(std::ostream &output, const Complex& a) {
 	output << a.getReal() << "+" << a.getImag() << "i";
 	return output;
 }
-std::istream &operator>>(std::istream &input, Complex& a) {
+std::istream& operator>>(std::istream &input, Complex& a) {
 	double real, imag;
 	input >> real >> imag;
 	a.setReal(real);
@@ -115,11 +118,22 @@ double Complex::operator[](int i) {
 	}
 }
 
+Complex Complex::exp(Complex c) {
+	return (Complex(std::cos(c.getImag()),std::sin(c.getImag())) * std::exp(c.getReal()));
+}
+Complex Complex::sin(Complex c) {
+	//return (exp(c*iunit) - exp(-c * iunit))/(2*iunit);
+}
+Complex Complex::cos(Complex c) {
+	//return (exp(c*iunit) + exp(-c * iunit))/(2);
+}
+
 Complex Complex::operator-() {
 	return Complex(-this->getReal(), -this->getImag());
 }
 
 int main() {
 	Complex a(3,4);
-	std::cout << -(++a);
+	Complex b(3,-4);
+	std::cout << a*b;
 }
