@@ -34,4 +34,32 @@ Complex::Complex(std::string str) {
 	}
 
 }
-int main(){}
+
+// prefix
+Complex& Complex::operator++(){
+	setReal(getReal() +1.0);
+	return *this;	
+}
+// postfix 
+Complex Complex::operator++(int){
+	Complex copy(this->getReal(), this->getImag()); // copy
+    operator++(); // pre-increment
+    return copy;   // return old value
+}
+
+// prefix
+Complex& Complex::operator--(){
+	setReal(getReal() -1.0);
+	return *this;
+}
+// postfix
+Complex Complex::operator--(int){
+	Complex copy(this->getReal(), this->getImag()); // copy
+    operator--(); // pre-increment
+    return copy;   // return old value
+}
+
+
+int main(){
+	
+}
