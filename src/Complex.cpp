@@ -107,5 +107,35 @@ Complex::Complex(std::string str) {
 		}
 		return false;
 	}
-
+	//
+	Complex:: bool operator>(int a) {
+		if(getReal()>a} {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator>(long a, int, b) {
+		if(getReal()>a} {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator>(float a) {
+		if(getReal()>a} {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator>(double a) {
+		if(getReal()>a} {
+			return true;
+		}
+		return false;
+	}
+	Complex:: bool operator>(Complex& a) {
+		if(getReal()>a.getReal()} {
+			return true;
+		}
+		return false;
+	}
 int main(){}
