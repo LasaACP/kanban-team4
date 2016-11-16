@@ -229,6 +229,11 @@ class Complex {
 			static Complex asinh(Complex);
 			static Complex atanh(Complex);
 
+		/* Complex */
+
+			static Complex conj(Complex);
+			static double abs(Complex);
+
 		/* Classification */
 
 			bool isInfinite();
@@ -243,8 +248,8 @@ class Complex {
 
 		/* Constants */
 
-			const static double E  = 2.7182818284590452;
-			const static double PI = 3.1415926535897932;
+			const static double E;
+			const static double PI;
 		
 };
 
