@@ -35,23 +35,11 @@ class Complex {
 	
 		/* Basic assignment operators */
 
-			void operator=(int a) {
-				setReal(a);
-			}
-			void operator=(long a,int b) {
-				setReal(a);
-				setImag(b);
-			}
-			void operator=(float a) {
-				setReal(a);
-			}
-			void operator=(double a) {
-				setReal(a);
-			}
-			void operator=(const Complex& a) {
-				setReal(a.getReal());
-				setImag(a.getImag());
-			}
+			void operator=(int);
+			void operator=(long int);
+			void operator=(float);
+			void operator=(double);
+			void operator=(const Complex&);
 
 		/* Integer promotion and negation */
 
@@ -60,23 +48,11 @@ class Complex {
 		
 		/* Basic arithmetic operators */
 
-			Complex operator+(int a) {
-				setReal(getReal+a);	
-			}
-			Complex operator+(long a, int b) {
-				setReal(getReal+a);
-				setImag(getImag+b);
-			}
-			Complex operator+(float a) {
-				setReal(getReal+a);	
-			}
-			Complex operator+(double a) {
-				setReal(getReal+a);	
-			}
-			Complex operator+(const Complex& a) {
-				setReal(getReal+a.getReal());
-				setImag(getImag+a.getImag());
-			}
+			Complex operator+(int);
+			Complex operator+(long int);
+			Complex operator+(float);
+			Complex operator+(double);
+			Complex operator+(const Complex&);
 
 			Complex operator-(int);
 			Complex operator-(long int);
