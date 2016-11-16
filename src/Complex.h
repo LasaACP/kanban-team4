@@ -243,8 +243,8 @@ class Complex {
 
 		/* Constants */
 
-			static double E;
-			static double PI;
+			const static double E  = 2.7182818284590452;
+			const static double PI = 3.1415926535897932;
 		
 };
 
