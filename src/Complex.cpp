@@ -35,6 +35,62 @@ Complex::Complex(std::string str) {
 
 }
 
+Complex Complex::operator*(int c){
+	setReal(getReal() * c);
+	setImag(getImag() * c);
+	return *this;
+}
+Complex Complex::operator*(long int c){
+	setReal(getReal() * c);
+	setImag(getImag() * c);
+	return *this;
+}
+Complex Complex::operator*(float c){
+	setReal(getReal() * c);
+	setImag(getImag() * c);
+	return *this;
+}
+Complex Complex::operator*(double c){
+	setReal(getReal() * c);
+	setImag(getImag() * c);
+	return *this;
+}
+Complex Complex::operator*(Complex& c){
+	Complex copy1(this->getReal(), this->getImag()); // copy
+	copy1.setReal(getReal() * c.getReal());
+	copy1.setImag(getImag() * c.getReal());
+	Complex copy2(this->getReal(), this->getImag()); // copy
+	copy2.setReal(-1*getImag() * c.getImag());
+	copy2.setImag(getReal() * c.getImag());
+	setReal(copy1.getReal() + copy2.getReal());
+	setImag(copy1.getImag() + copy2.getImag());
+	return *this;
+}
+
+// prefix
+Complex& Complex::operator++(){
+	setReal(getReal() +1.0);
+	return *this;	
+}
+// postfix 
+Complex Complex::operator++(int){
+	Complex copy(this->getReal(), this->getImag()); // copy
+    operator++(); // pre-increment
+    return copy;   // return old value
+}
+
+// prefix
+Complex& Complex::operator--(){
+	setReal(getReal() -1.0);
+	return *this;
+}
+// postfix
+Complex Complex::operator--(int){
+	Complex copy(this->getReal(), this->getImag()); // copy
+    operator--(); // pre-increment
+    return copy;   // return old value
+}
+
 /* Stream insertion */
 
 std::ostream &operator<<(std::ostream &output, const Complex& a) {
@@ -65,5 +121,5 @@ Complex Complex::operator-() {
 
 int main() {
 	Complex a(3,4);
-	std::cout << (-a);
+	std::cout << -(++a);
 }
