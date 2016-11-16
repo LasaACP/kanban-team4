@@ -34,4 +34,31 @@ Complex::Complex(std::string str) {
 	}
 
 }
+
+Complex operator-(int a)
+{
+	this.setReal(this.getReal()-double(a));
+	return this;
+}
+Complex operator-(long int a)
+{
+	this.setReal(this.getReal()-double(a));
+	return this;
+}
+Complex operator-(float a)
+{
+	this.setReal(this.getReal()-double(a));
+	return this;
+}
+Complex operator-(double a)
+{
+	this.setReal(this.getReal()-a);
+	return this;
+}
+Complex operator-(Complex& a)
+{
+	this.setImag(this.getImag() - a.getImag());
+	this.setReal(this.getReal() - a.getReal());
+	return this;
+}
 int main(){}
