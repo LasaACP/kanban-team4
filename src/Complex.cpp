@@ -89,5 +89,5 @@ Complex Complex::operator-() {
 
 int main() {
 	Complex a(3,4);
-	std::cout << (-a);
+	std::cout << -(++a);
 }
