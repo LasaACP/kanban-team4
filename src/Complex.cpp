@@ -51,7 +51,7 @@ Complex::Complex(std::string str) {
 	Complex:: void operator=(double a) {
 		setReal(a);
 	}
-	Complex:: void operator=(const Complex& a) {
+	Complex:: void operator=(Complex& a) {
 		setReal(a.getReal());
 		setImag(a.getImag());
 	}
