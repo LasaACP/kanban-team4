@@ -37,181 +37,183 @@ Complex::Complex(std::string str) {
 
 
 //assignment operators
-
-	Complex:: void operator=(int a) {
+	void Complex::operator =(int a) {
 		setReal(a);
 	}
-	Complex:: void operator=(long a,int b) {
-		setReal(a);
-		setImag(b);
-	}
-	Complex:: void operator=(float a) {
+	void Complex::operator =(long int a) {
 		setReal(a);
 	}
-	Complex:: void operator=(double a) {
+	void Complex::operator =(float a) {
 		setReal(a);
 	}
-	Complex:: void operator=(Complex& a) {
+	void Complex::operator =(double a) {
+		setReal(a);
+	}
+	void Complex::operator =(Complex& a) {
 		setReal(a.getReal());
 		setImag(a.getImag());
 	}
 
 //basic arithematic operators
 
-	Complex:: Complex operator+(int a) {
-		setReal(getReal+a);	
+	Complex Complex::operator+(int a) {
+		Complex::setReal(getReal()+a);
+		return *this;		
 	}
-	Complex:: Complex operator+(long a, int b) {
-		setReal(getReal+a);
-		setImag(getImag+b);
+	Complex Complex::operator+(long int a) {
+		setReal(getReal()+a);
+		return *this;
 	}
-	Complex:: Complex operator+(float a) {
-		setReal(getReal+a);	
+	Complex Complex::operator+(float a) {
+		setReal(getReal()+a);
+		return *this;		
 	}
-	Complex:: Complex operator+(double a) {
-		setReal(getReal+a);	
+	Complex Complex::operator+(double a) {
+		setReal(getReal()+a);
+		return *this;
 	}
-	Complex:: Complex operator+(const Complex& a) {
-		setReal(getReal+a.getReal());
-		setImag(getImag+a.getImag());
+	Complex Complex::operator+(Complex& a) {
+		Complex::setReal(Complex::getReal()+a.getReal());
+		Complex::setImag(Complex::getImag()+a.getImag());
+		return *this;
 	}
 
 //basic comparison operators
-	Complex:: bool operator==(int a) {
+	bool Complex::operator==(int a) {
 			if(getReal()==a && getImag()==0) {
 			return true;
 		}
 		return false;
 	}
-	Complex:: bool operator==(long a, int b) {
-			if(getReal()==a && getImag()==b) {
-			return true;
-		}
-		return false;
-	}
-	Complex:: bool operator==(float a) {
+	bool Complex::operator==(long int a) {
 			if(getReal()==a && getImag()==0) {
 			return true;
 		}
 		return false;
 	}
-	Complex:: bool operator==(double a) {
+	bool Complex::operator==(float a) {
 			if(getReal()==a && getImag()==0) {
 			return true;
 		}
 		return false;
 	}
-	Complex:: bool operator==(Complex& a) {
+	bool Complex::operator==(double a) {
+			if(getReal()==a && getImag()==0) {
+			return true;
+		}
+		return false;
+	}
+	bool Complex::operator==(Complex& a) {
 			if(getReal()==a.getReal() && getImag()==a.getImag()) {
 			return true;
 		}
 		return false;
 	}
 	//
-	Complex:: bool operator!=(int a) {
+	bool Complex::operator!=(int a) {
 			if(getReal()!=a || getImag()!=0) {
 			return true;
 		}
 		return false;
 	}
-	Complex:: bool operator!=(long a, int b) {
-			if(getReal()!=a || getImag()!=b) {
+	bool Complex::operator!=(long int a) {
+			if(getReal()!=a || getImag()!=a) {
 			return true;
 		}
 		return false;
 	}
-	Complex:: bool operator!=(float a) {
+	bool Complex::operator!=(float a) {
 			if(getReal()!=a || getImag()!=0) {
 			return true;
 		}
 		return false;
 	}
-	Complex:: bool operator!=(double a) {
+	bool Complex::operator!=(double a) {
 			if(getReal()!=a || getImag()!=0) {
 			return true;
 		}
 		return false;
 	}
-	Complex:: bool operator!=(Complex& a) {
+	bool Complex::operator!=(Complex& a) {
 			if(getReal()!=a.getReal() || getImag()!=a.getImag()) {
 			return true;
 		}
 		return false;
 	}
 	//
-	Complex:: bool operator>(int a) {
-		if(getReal()>a} {
+	bool Complex::operator>(int a) {
+		if(getReal()>a) {
 			return true;
 		}
 		return false;
 	}
-	Complex:: bool operator>(long a, int, b) {
-		if(getReal()>a} {
+	bool Complex::operator>(long int a) {
+		if(getReal()>a) {
 			return true;
 		}
 		return false;
 	}
-	Complex:: bool operator>(float a) {
-		if(getReal()>a} {
+	bool Complex::operator>(float a) {
+		if(getReal()>a) {
 			return true;
 		}
 		return false;
 	}
-	Complex:: bool operator>(double a) {
-		if(getReal()>a} {
+	bool Complex::operator>(double a) {
+		if(getReal()>a) {
 			return true;
 		}
 		return false;
 	}
-	Complex:: bool operator>(Complex& a) {
-		if(getReal()>a.getReal()} {
+	bool Complex::operator>(Complex& a) {
+		if(getReal()>a.getReal()) {
 			return true;
 		}
 		return false;
 	}
 	//
-	Complex:: bool operator>=(int a) {
+	bool Complex::operator>=(int a) {
 		if(getReal()>a) { return true; }
 		else if(getReal()==a && getImag()==0) {return true;}
 		return false;
 	}
-	Complex:: bool operator>=(long a, int, b) {
-		if(getReal()>a) { return true; }
-		else if(getReal()==a && getImag()==b) {return true;}
-		return false;
-	}
-	Complex:: bool operator>=(float a) {
+	bool Complex::operator>=(long int a) {
 		if(getReal()>a) { return true; }
 		else if(getReal()==a && getImag()==0) {return true;}
 		return false;
 	}
-	Complex:: bool operator>=(double a) {
+	bool Complex::operator>=(float a) {
 		if(getReal()>a) { return true; }
 		else if(getReal()==a && getImag()==0) {return true;}
 		return false;
 	}
-	Complex:: bool operator>=(Complex& a) {
+	bool Complex::operator>=(double a) {
+		if(getReal()>a) { return true; }
+		else if(getReal()==a && getImag()==0) {return true;}
+		return false;
+	}
+	bool Complex::operator>=(Complex& a) {
 		if(getReal()>a.getReal()) { return true; }
 		else if(getReal()==a.getReal() && getImag()==a.getImag()) {return true;}
 		return false;
 	}
 	//
-	Complex:: bool operator<=(long a, int, b) {
-		if(getReal()<a) { return true; }
-		else if(getReal()==a && getImag()==b) {return true;}
-		return false;
-	}
-	Complex:: bool operator<=(float a) {
+	bool Complex::operator<=(long int a) {
 		if(getReal()<a) { return true; }
 		else if(getReal()==a && getImag()==0) {return true;}
 		return false;
 	}
-	Complex:: bool operator<=(double a) {
+	bool Complex::operator<=(float a) {
 		if(getReal()<a) { return true; }
 		else if(getReal()==a && getImag()==0) {return true;}
 		return false;
 	}
-	Complex:: bool operator<=(Complex& a) {
+	bool Complex::operator<=(double a) {
+		if(getReal()<a) { return true; }
+		else if(getReal()==a && getImag()==0) {return true;}
+		return false;
+	}
+	bool Complex::operator<=(Complex& a) {
 		if(getReal()<a.getReal()) { return true; }
 		else if(getReal()==a.getReal() && getImag()==a.getImag()) {return true;}
 		return false;

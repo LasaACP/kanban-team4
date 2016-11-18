@@ -39,7 +39,7 @@ class Complex {
 			void operator=(long int);
 			void operator=(float);
 			void operator=(double);
-			void operator=(const Complex&);
+			void operator=(Complex&);
 
 		/* Integer promotion and negation */
 
@@ -52,31 +52,31 @@ class Complex {
 			Complex operator+(long int);
 			Complex operator+(float);
 			Complex operator+(double);
-			Complex operator+(const Complex&);
+			Complex operator+(Complex&);
 
 			Complex operator-(int);
 			Complex operator-(long int);
 			Complex operator-(float);
 			Complex operator-(double);
-			Complex operator-(const Complex&);
+			Complex operator-(Complex&);
 			
 			Complex operator*(int);
 			Complex operator*(long int);
 			Complex operator*(float);
 			Complex operator*(double);
-			Complex operator*(const Complex&);
+			Complex operator*(Complex&);
 			
 			Complex operator/(int);
 			Complex operator/(long int);
 			Complex operator/(float);
 			Complex operator/(double);
-			Complex operator/(const Complex&);
+			Complex operator/(Complex&);
 			
 			Complex operator%(int);
 			Complex operator%(long int);
 			Complex operator%(float);
 			Complex operator%(double);
-			Complex operator%(const Complex&);
+			Complex operator%(Complex&);
 
 		/* Increment/decrement */
 
@@ -172,31 +172,31 @@ class Complex {
 			Complex operator+=(long int);
 			Complex operator+=(float);
 			Complex operator+=(double);
-			Complex operator+=(const Complex&);
+			Complex operator+=(Complex&);
 
 			Complex operator-=(int);
 			Complex operator-=(long int);
 			Complex operator-=(float);
 			Complex operator-=(double);
-			Complex operator-=(const Complex&);
+			Complex operator-=(Complex&);
 			
 			Complex operator*=(int);
 			Complex operator*=(long int);
 			Complex operator*=(float);
 			Complex operator*=(double);
-			Complex operator*=(const Complex&);
+			Complex operator*=(Complex&);
 			
 			Complex operator/=(int);
 			Complex operator/=(long int);
 			Complex operator/=(float);
 			Complex operator/=(double);
-			Complex operator/=(const Complex&);
+			Complex operator/=(Complex&);
 			
 			Complex operator%=(int);
 			Complex operator%=(long int);
 			Complex operator%=(float);
 			Complex operator%=(double);
-			Complex operator%=(const Complex&);
+			Complex operator%=(Complex&);
 
 			Complex operator|=(int);
 			Complex operator|=(long int);
