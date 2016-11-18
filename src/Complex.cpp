@@ -56,23 +56,23 @@ Complex::Complex(std::string str) {
 
 //basic arithematic operators
 
-	Complex Complex::operator+(int a) {
+	Complex Complex::operator+=(int a) {
 		Complex::setReal(getReal()+a);
 		return *this;		
 	}
-	Complex Complex::operator+(long int a) {
+	Complex Complex::operator+=(long int a) {
 		setReal(getReal()+a);
 		return *this;
 	}
-	Complex Complex::operator+(float a) {
+	Complex Complex::operator+=(float a) {
 		setReal(getReal()+a);
 		return *this;		
 	}
-	Complex Complex::operator+(double a) {
+	Complex Complex::operator+=(double a) {
 		setReal(getReal()+a);
 		return *this;
 	}
-	Complex Complex::operator+(Complex& a) {
+	Complex Complex::operator+=(Complex& a) {
 		Complex::setReal(Complex::getReal()+a.getReal());
 		Complex::setImag(Complex::getImag()+a.getImag());
 		return *this;
