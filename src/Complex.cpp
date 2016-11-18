@@ -9,6 +9,10 @@ Complex::Complex() {
 	real = 0;
 	imag = 0;
 }
+Complex::Complex(int A) {
+	real = A;
+	imag = 0;
+}
 Complex::Complex(double A) {
 	real = A;
 	imag = 0;
@@ -118,22 +122,22 @@ double Complex::operator[](int i) {
 	}
 }
 
-Complex Complex::exp(Complex c) {
+Complex Complex::exp(Complex& c) {
 	return (Complex(std::cos(c.getImag()),std::sin(c.getImag())) * std::exp(c.getReal()));
 }
-Complex Complex::sin(Complex c) {
-	//return (exp(c*iunit) - exp(-c * iunit))/(2*iunit);
+/*Complex Complex::sin(Complex& c) {
+	return (exp(c * Complex(0,1)) - exp((-c) * Complex(0,1)))/(Complex(0,2));
 }
-Complex Complex::cos(Complex c) {
-	//return (exp(c*iunit) + exp(-c * iunit))/(2);
-}
+Complex Complex::cos(Complex& c) {
+	return (exp(c * Complex(0,1)) + exp((-c) * Complex(0,1)))/(2);
+}*/
 
 Complex Complex::operator-() {
 	return Complex(-this->getReal(), -this->getImag());
 }
 
 int main() {
-	Complex a(3,4);
-	Complex b(3,-4);
-	std::cout << a*b;
+	Complex i(0,1);
+	Complex z(3,4);
+	std::cout << Complex::exp(z);
 }
