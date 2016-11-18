@@ -17,9 +17,14 @@ Complex::Complex(double A) {
 	real = A;
 	imag = 0;
 }
-Complex::Complex(double A, double B) {
-	real = A;
-	imag = B;
+Complex::Complex(double A, double B, bool polar=false) {
+	if (!polar) {
+		real = A;
+		imag = B;
+	} else {
+		real = A*std::cos(B);
+		imag = A*std::sin(B);
+	}
 }
 Complex::Complex(std::string str) {
 	for (int i =0; i < str.length(); i++) {
@@ -106,7 +111,9 @@ Complex Complex::operator/(Complex& c){
 	setImag(copy1.getImag() + copy2.getImag());
 	return *this;
 }
+
 /*increment and decrement*/
+
 // prefix
 Complex& Complex::operator++(){
 	setReal(getReal() +1.0);
@@ -169,4 +176,7 @@ Complex Complex::operator-() {
 	return Complex(-this->getReal(), -this->getImag());
 }
 
-int main() {}
+int main() {
+	Complex a(1,M_PI,true);
+	std::cout << a;
+}

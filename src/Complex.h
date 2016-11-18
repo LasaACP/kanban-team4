@@ -15,7 +15,7 @@ class Complex {
 		Complex(int);
 		Complex(float);
 		Complex(double);
-		Complex(double,double);
+		Complex(double,double,bool);
 		Complex(std::string);
 
 	/* READ WRITE */
