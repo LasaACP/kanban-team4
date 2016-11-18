@@ -2,7 +2,6 @@
 #include <string>
 #include <cmath>
 #include <math.h>
-#include <tgmath.h>
 #include "Complex.h"
 
 #define iunit Complex(0,1);
@@ -88,7 +87,6 @@ double Complex::ang(Complex c) {
 	return std::atan2(b,a);
 }
 
-
 /* Returns the absolute value of the Complex. */
 double Complex::getR() {
 	return Complex::abs(*this);
@@ -98,6 +96,126 @@ double Complex::getPhi() {
 	return Complex::ang(*this);
 }
 
+/*                */
+/*   ASSIGNMENT   */
+/*                */
+
+// NEED TO CHANGE FOR CONVENTION
+/*void Complex::operator=(int a) {
+	setReal(a);
+}
+void Complex::operator=(long int a) {
+	setReal(a);
+}
+void Complex::operator=(float a) {
+	setReal(a);
+}
+void Complex::operator=(double a) {
+	setReal(a);
+}
+void Complex::operator=(Complex& a) {
+	setReal(a.getReal());
+	setImag(a.getImag());
+}*/
+
+/*             */
+/*   BOOLEAN   */
+/*             */
+
+/* Basic comparison operators */
+/* Equality */
+	bool Complex::operator==(int a) {
+		return (getReal()==a && getImag()==0);
+	}
+	bool Complex::operator==(long int a) {
+		return (getReal()==a && getImag()==0);
+	}
+	bool Complex::operator==(float a) {
+		return (getReal()==a && getImag()==0);
+	}
+	bool Complex::operator==(double a) {
+		return (getReal()==a && getImag()==0);
+	}
+	bool Complex::operator==(Complex& a) {
+		return (getReal()==a.getReal() && getImag()==a.getImag());
+	}
+/* Not equal */
+	bool Complex::operator!=(int a) {
+		return (getReal()!=a || getImag()!=0);
+	}
+	bool Complex::operator!=(long int a) {
+		return (getReal()!=a || getImag()!=a);
+	}
+	bool Complex::operator!=(float a) {
+		return (getReal()!=a || getImag()!=0);
+	}
+	bool Complex::operator!=(double a) {
+		return (getReal()!=a || getImag()!=0);
+	}
+	bool Complex::operator!=(Complex& a) {
+		return (getReal()!=a.getReal() || getImag()!=a.getImag());
+	}
+/* Greater */
+	bool Complex::operator>(int a) {
+		return (Complex::abs(*this)>a);
+	}
+	bool Complex::operator>(long int a) {
+		return (Complex::abs(*this)>a);
+	}
+	bool Complex::operator>(float a) {
+		return (Complex::abs(*this)>a);
+	}
+	bool Complex::operator>(double a) {
+		return (Complex::abs(*this)>a);
+	}
+	bool Complex::operator>(Complex& a) {
+		return (Complex::abs(*this)>Complex::abs(a));
+	}
+/* Less */
+	bool Complex::operator<(int a) {
+		return (Complex::abs(*this)>a);
+	}
+	bool Complex::operator<(long int a) {
+		return (Complex::abs(*this)>a);
+	}
+	bool Complex::operator<(float a) {
+		return (Complex::abs(*this)>a);
+	}
+	bool Complex::operator<(double a) {
+		return (Complex::abs(*this)>a);
+	}
+	bool Complex::operator<(Complex& a) {
+		return (Complex::abs(*this)>Complex::abs(a));
+	}
+/* GEQ */
+	bool Complex::operator>=(int a) {
+		return *this > a || *this == a;
+	}
+	bool Complex::operator>=(long int a) {
+		return *this > a || *this == a;
+	}
+	bool Complex::operator>=(float a) {
+		return *this > a || *this == a;
+	}
+	bool Complex::operator>=(double a) {
+		return *this > a || *this == a;
+	}
+	bool Complex::operator>=(Complex& a) {
+		return *this > a || *this == a;
+	}
+/* LEQ */
+	bool Complex::operator<=(long int a) {
+		return *this < a || *this == a;
+	}
+	bool Complex::operator<=(float a) {
+		return *this < a || *this == a;
+	}
+	bool Complex::operator<=(double a) {
+		return *this < a || *this == a;
+	}
+	bool Complex::operator<=(Complex& a) {
+		return *this < a || *this == a;
+	}
 
 /*                */
 /*   ARITHMETIC   */
@@ -107,6 +225,33 @@ double Complex::getPhi() {
 Complex Complex::operator-() {
 	return Complex(-this->getReal(), -this->getImag());
 }
+
+/* Addition */
+
+// Compound assignment
+Complex Complex::operator+=(int a) {
+	Complex::setReal(getReal()+a);
+	return *this;		
+}
+Complex Complex::operator+=(long int a) {
+	setReal(getReal()+a);
+	return *this;
+}
+Complex Complex::operator+=(float a) {
+	setReal(getReal()+a);
+	return *this;		
+}
+Complex Complex::operator+=(double a) {
+	setReal(getReal()+a);
+	return *this;
+}
+Complex Complex::operator+=(Complex& a) {
+	Complex::setReal(Complex::getReal()+a.getReal());
+	Complex::setImag(Complex::getImag()+a.getImag());
+	return *this;
+}
+
+/* Subtraction */
 
 /* Multiplication */
 Complex Complex::operator*(int c){
@@ -277,3 +422,5 @@ Complex Complex::cos(Complex& c) {
 }*/
 
 int main() { }
+
+
