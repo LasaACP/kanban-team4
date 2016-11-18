@@ -172,6 +172,36 @@ Complex::Complex(std::string str) {
 		return false;
 	}
 	//
+	bool Complex::operator<(int a) {
+		if(getReal()<a) {
+			return true;
+		}
+		return false;
+	}
+	bool Complex::operator<(long int a) {
+		if(getReal()<a) {
+			return true;
+		}
+		return false;
+	}
+	bool Complex::operator<(float a) {
+		if(getReal()<a) {
+			return true;
+		}
+		return false;
+	}
+	bool Complex::operator<(double a) {
+		if(getReal()<a) {
+			return true;
+		}
+		return false;
+	}
+	bool Complex::operator<(Complex& a) {
+		if(getReal()<a.getReal()) {
+			return true;
+		}
+		return false;
+	}
 	bool Complex::operator>=(int a) {
 		if(getReal()>a) { return true; }
 		else if(getReal()==a && getImag()==0) {return true;}
