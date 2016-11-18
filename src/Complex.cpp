@@ -227,96 +227,253 @@ Complex Complex::operator-() {
 }
 
 /* Addition */
+Complex Complex::operator+(int c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal() + c);
+	return copy;
+}
+Complex Complex::operator+(long int c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal() + c);
+	return copy;
+}
+Complex Complex::operator+(float c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal() + c);
+	return copy;
+}
+Complex Complex::operator+(double c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal() + c);
+	return copy;
+}
+Complex Complex::operator+(Complex& c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal() + c.getReal());
+	copy.setImag(this->getImag() + c.getImag());
+	return copy;
+}
 
 // Compound assignment
 Complex Complex::operator+=(int a) {
-	Complex::setReal(getReal()+a);
+	this->setReal(this->getReal()+a);
 	return *this;		
 }
 Complex Complex::operator+=(long int a) {
-	setReal(getReal()+a);
+	this->setReal(this->getReal()+a);
 	return *this;
 }
 Complex Complex::operator+=(float a) {
-	setReal(getReal()+a);
+	this->setReal(this->getReal()+a);
 	return *this;		
 }
 Complex Complex::operator+=(double a) {
-	setReal(getReal()+a);
+	this->setReal(this->getReal()+a);
 	return *this;
 }
 Complex Complex::operator+=(Complex& a) {
-	Complex::setReal(Complex::getReal()+a.getReal());
-	Complex::setImag(Complex::getImag()+a.getImag());
+	this->setReal(this->getReal()+a.getReal());
+	this->setImag(this->getImag()+a.getImag());
 	return *this;
 }
 
 /* Subtraction */
 
-/* Multiplication */
-Complex Complex::operator*(int c){
-	setReal(getReal() * c);
-	setImag(getImag() * c);
+Complex Complex::operator-(int c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal() - c);
+	return copy;
+}
+Complex Complex::operator-(long int c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal() - c);
+	return copy;
+}
+Complex Complex::operator-(float c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal() - c);
+	return copy;
+}
+Complex Complex::operator-(double c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal() - c);
+	return copy;
+}
+Complex Complex::operator-(Complex& c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal() - c.getReal());
+	copy.setImag(this->getImag() - c.getImag());
+	return copy;
+}
+
+// Compound assignment
+Complex Complex::Complex operator-=(int a) {
+	this->setReal(this->getReal() - a));
 	return *this;
 }
-Complex Complex::operator*(long int c){
-	setReal(getReal() * c);
-	setImag(getImag() * c);
+Complex Complex::Complex operator-=(long int a) {
+	this->setReal(this->getReal() - a);
 	return *this;
 }
-Complex Complex::operator*(float c){
-	setReal(getReal() * c);
-	setImag(getImag() * c);
+Complex Complex::Complex operator-=(float a) {
+	this->setReal(this->getReal() - a);
 	return *this;
 }
-Complex Complex::operator*(double c){
-	setReal(getReal() * c);
-	setImag(getImag() * c);
+Complex Complex::Complex operator-=(double a) {
+	this->setReal(this->getReal() - a);
 	return *this;
 }
-Complex Complex::operator*(Complex& c){
-	Complex copy1(this->getReal(), this->getImag()); // copy
-	copy1.setReal(getReal() * c.getReal());
-	copy1.setImag(getImag() * c.getReal());
-	Complex copy2(this->getReal(), this->getImag()); // copy
-	copy2.setReal(-1*getImag() * c.getImag());
-	copy2.setImag(getReal() * c.getImag());
-	setReal(copy1.getReal() + copy2.getReal());
-	setImag(copy1.getImag() + copy2.getImag());
+Complex Complex::Complex operator-=(Complex& a) {
+	this->setImag(this->getImag() - a.getImag());
+	this->setReal(this->getReal() - a.getReal());
 	return *this;
 }
 
+/* Multiplication */
+Complex Complex::operator*(int c) {
+	Complex copy(0,0);
+	copy.setReal(copy.getReal() * c);
+	copy.setImag(copy.getImag() * c);
+	return *this;
+}
+Complex Complex::operator*(long int c) {
+	Complex copy(0,0);
+	copy.setReal(copy.getReal() * c);
+	copy.setImag(copy.getImag() * c);
+	return *this;
+}
+Complex Complex::operator*(float c) {
+	Complex copy(0,0);
+	copy.setReal(copy.getReal() * c);
+	copy.setImag(copy.getImag() * c);
+	return *this;
+}
+Complex Complex::operator*(double c) {
+	Complex copy(0,0);
+	copy.setReal(copy.getReal() * c);
+	copy.setImag(copy.getImag() * c);
+	return copy;
+}
+Complex Complex::operator*(Complex& c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal()*c.getReal() - this->getImag()*c.getImag());
+	copy.setImag(this->getImag()*c.getReal() + this->getReal()*c.getImag());
+	return copy;
+}
+
+// Compound assignment
+Complex Complex::operator*=(int c) {
+	this->setReal(this->getReal() * c);
+	this->setImag(this->getImag() * c);
+	return *this;
+}
+Complex Complex::operator*=(long int c) {
+	this->setReal(this->getReal() * c);
+	this->setImag(this->getImag() * c);
+	return *this;
+}
+Complex Complex::operator*=(float c) {
+	this->setReal(this->getReal() * c);
+	this->setImag(this->getImag() * c);
+	return *this;
+}
+Complex Complex::operator*=(double c) {
+	this->setReal(this->getReal() * c);
+	this->setImag(this->getImag() * c);
+	return *this;
+}
+Complex Complex::operator*=(Complex& c) {
+	Complex copy(0,0);
+	copy.setReal(this->getReal()*c.getReal() - this->getImag()*c.getImag());
+	copy.setImag(this->getImag()*c.getReal() + this->getReal()*c.getImag());
+	*this = copy;
+	return *this;
+}
+
+
 /* Division */
-Complex Complex::operator/(int c){
-	setReal(getReal() / c);
-	setImag(getImag() / c);
+Complex Complex::operator/(int c) {
+	Complex copy(0,0);
+	copy.setReal(copy.getReal() / c);
+	copy.setImag(copy.getImag() / c);
+	return copy;
+}
+Complex Complex::operator/(long int c) {
+	Complex copy(0,0);
+	copy.setReal(copy.getReal() / c);
+	copy.setImag(copy.getImag() / c);
+	return copy;
+}
+Complex Complex::operator/(float c) {
+	Complex copy(0,0);
+	copy.setReal(copy.getReal() / c);
+	copy.setImag(copy.getImag() / c);
+	return copy;
+}
+Complex Complex::operator/(double c) {
+	Complex copy(0,0);
+	copy.setReal(copy.getReal() / c);
+	copy.setImag(copy.getImag() / c);
+	return copy;
+}
+Complex Complex::operator/(Complex& c) {
+	Complex copy(0,0);
+	copy.setReal((this->getReal()*c.getReal() + this->getImag()*c.getImag())/(this->getImag()*this->getImag() + c.getImag()*c.getImag()));
+	copy.setImag((this->getImag()*c.getReal() - this->getReal()*c.getImag())/(this->getImag()*this->getImag() + c.getImag()*c.getImag()));
+	return copy;
+}
+
+// Compound assignment
+Complex Complex::operator/=(int c) {
+	this->setReal(this->getReal() / c);
+	this->setImag(this->getImag() / c);
 	return *this;
 }
-Complex Complex::operator/(long int c){
-	setReal(getReal() / c);
-	setImag(getImag() / c);
+Complex Complex::operator/=(long int c) {
+	this->setReal(this->getReal() / c);
+	this->setImag(this->getImag() / c);
 	return *this;
 }
-Complex Complex::operator/(float c){
-	setReal(getReal() / c);
-	setImag(getImag() / c);
+Complex Complex::operator/=(float c) {
+	this->setReal(this->getReal() / c);
+	this->setImag(this->getImag() / c);
 	return *this;
 }
-Complex Complex::operator/(double c){
-	setReal(getReal() / c);
-	setImag(getImag() / c);
+Complex Complex::operator/=(double c) {
+	this->setReal(this->getReal() / c);
+	this->setImag(this->getImag() / c);
 	return *this;
 }
-Complex Complex::operator/(Complex& c){
-	Complex copy1(this->getReal(), this->getImag()); // copy
-	copy1.setReal(getReal() / c.getReal());
-	copy1.setImag(getImag() / c.getReal());
-	Complex copy2(this->getReal(), this->getImag()); // copy
-	copy2.setReal(getImag() / c.getImag());
-	copy2.setImag(getReal() / c.getImag());
-	setReal(copy1.getReal() + copy2.getReal());
-	setImag(copy1.getImag() + copy2.getImag());
+Complex Complex::operator/(Complex& c) {
+	Complex copy(0,0);
+	copy.setReal((this->getReal()*c.getReal() + this->getImag()*c.getImag())/(this->getImag()*this->getImag() + c.getImag()*c.getImag()));
+	copy.setImag((this->getImag()*c.getReal() - this->getReal()*c.getImag())/(this->getImag()*this->getImag() + c.getImag()*c.getImag()));
+	*this = copy;
 	return *this;
+}
+
+/* Modulo */
+
+Complex::Complex operator%(int a) {
+	this.setReal(this.getReal % ((double)a));
+	return this;
+}
+Complex::Complex operator%(long int a) {
+	this.setReal(this.getReal % ((double)a));
+	return this;
+}
+Complex::Complex operator%(float a) {
+	this.setReal(this.getReal % ((double)a));
+	return this;
+}
+Complex::Complex operator%(double a) {
+	this.setReal(this.getReal % a);
+	return this;
+}
+Complex::Complex operator%(const Complex& a) {
+	this.setImag(this.getImag() % a.getImag());
+	this.setReal(this.getReal() % a.getReal());
+	return this;
 }
 
 /* Increment and Decrement */
@@ -422,5 +579,3 @@ Complex Complex::cos(Complex& c) {
 }*/
 
 int main() { }
-
-
