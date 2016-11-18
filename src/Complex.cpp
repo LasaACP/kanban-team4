@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <math.h>
+#include <tgmath.h>
 #include "Complex.h"
 
 #define iunit Complex(0,1);
@@ -60,11 +62,11 @@ double Complex::ang(Complex c) {
 	return std::atan2(b,a);
 }
 
-double Complex::getR(Complex c) {
-	return Complex::abs(c);
+double Complex::getR() {
+	return Complex::abs(*this);
 }
-double Complex::getPhi(Complex c) {
-	return Complex::ang(c);
+double Complex::getPhi() {
+	return Complex::ang(*this);
 }
 
 //multiplication
@@ -180,6 +182,31 @@ double Complex::operator[](int i) {
 	} else {
 		return 0;
 	}
+}
+
+Complex Complex::log(Complex ori){ //natural log
+	Complex copy(0,0);
+	copy.setReal(std::log(ori.getR()));
+	copy.setImag(ori.getPhi());
+	return copy;
+}
+Complex Complex::log10(Complex ori){
+	Complex copy(0,0);
+	copy.setReal((std::log10(ori.getR())));
+	copy.setImag(ori.getPhi()/std::log(10));
+	return copy;
+}
+Complex Complex::log2(Complex ori){
+	Complex copy(0,0);
+	copy.setReal(std::log(ori.getR())/std::log(2));
+	copy.setImag(ori.getPhi()/std::log(2));
+	return copy;
+}
+Complex Complex::logb(float base,Complex ori){
+	Complex copy(0,0);
+	copy.setReal(std::log(ori.getR())/std::log(base));
+	copy.setImag(ori.getPhi()/std::log(base));
+	return copy;
 }
 
 Complex Complex::exp(Complex& c) {
