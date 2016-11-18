@@ -109,7 +109,7 @@ Complex::Complex(std::string str) {
 		}
 		return false;
 	}
-	//
+	//new operator
 	bool Complex::operator!=(int a) {
 			if(getReal()!=a || getImag()!=0) {
 			return true;
@@ -140,7 +140,7 @@ Complex::Complex(std::string str) {
 		}
 		return false;
 	}
-	//
+	//new operator
 	bool Complex::operator>(int a) {
 		if(getReal()>a) {
 			return true;
@@ -171,7 +171,7 @@ Complex::Complex(std::string str) {
 		}
 		return false;
 	}
-	//
+	//new operator
 	bool Complex::operator<(int a) {
 		if(getReal()<a) {
 			return true;
@@ -202,6 +202,7 @@ Complex::Complex(std::string str) {
 		}
 		return false;
 	}
+	//new operator
 	bool Complex::operator>=(int a) {
 		if(getReal()>a) { return true; }
 		else if(getReal()==a && getImag()==0) {return true;}
@@ -227,7 +228,7 @@ Complex::Complex(std::string str) {
 		else if(getReal()==a.getReal() && getImag()==a.getImag()) {return true;}
 		return false;
 	}
-	//
+	//new operator
 	bool Complex::operator<=(long int a) {
 		if(getReal()<a) { return true; }
 		else if(getReal()==a && getImag()==0) {return true;}
