@@ -235,6 +235,7 @@ class Complex {
 
 			static Complex conj(Complex);
 			static double abs(Complex);
+			static double ang(Complex);
 
 		/* Classification */
 

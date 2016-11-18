@@ -47,6 +47,26 @@ Complex::Complex(std::string str) {
 
 }
 
+Complex Complex::rect(double r, double phi) {
+	return Complex(r,phi,true);
+}
+
+double Complex::abs(Complex c) {
+	return std::sqrt(c.getReal()*c.getReal() + c.getImag()*c.getImag());
+}
+double Complex::ang(Complex c) {
+	double a = c.getReal();
+	double b = c.getImag();
+	return std::atan2(b,a);
+}
+
+double Complex::getR(Complex c) {
+	return Complex::abs(c);
+}
+double Complex::getPhi(Complex c) {
+	return Complex::ang(c);
+}
+
 //multiplication
 Complex Complex::operator*(int c){
 	setReal(getReal() * c);
@@ -176,7 +196,4 @@ Complex Complex::operator-() {
 	return Complex(-this->getReal(), -this->getImag());
 }
 
-int main() {
-	Complex a(1,M_PI,true);
-	std::cout << a;
-}
+int main() { }
