@@ -12,6 +12,8 @@ class Complex {
 	public:
 	/* CONSTRUCTORS */
 		Complex();
+		Complex(int);
+		Complex(float);
 		Complex(double);
 		Complex(double,double);
 		Complex(std::string);
@@ -201,8 +203,8 @@ class Complex {
 			Complex pow(double);
 			Complex pow(Complex);
 	
-			static Complex exp(Complex);
-			static Complex exp2(Complex);
+			static Complex exp(Complex&);
+			static Complex exp2(Complex&);
 
 			static Complex log(Complex);
 			static Complex log10(Complex);
@@ -211,23 +213,28 @@ class Complex {
 
 		/* Trig */
 	
-			static Complex cos(Complex);
-			static Complex sin(Complex);
-			static Complex tan(Complex);
+			static Complex cos(Complex&);
+			static Complex sin(Complex&);
+			static Complex tan(Complex&);
 			
-			static Complex acos(Complex);
-			static Complex asin(Complex);
-			static Complex atan(Complex);
+			static Complex acos(Complex&);
+			static Complex asin(Complex&);
+			static Complex atan(Complex&);
 
 		/* Hyperbolic */
 
-			static Complex cosh(Complex);
-			static Complex sinh(Complex);
-			static Complex tanh(Complex);
+			static Complex cosh(Complex&);
+			static Complex sinh(Complex&);
+			static Complex tanh(Complex&);
 			
-			static Complex acosh(Complex);
-			static Complex asinh(Complex);
-			static Complex atanh(Complex);
+			static Complex acosh(Complex&);
+			static Complex asinh(Complex&);
+			static Complex atanh(Complex&);
+
+		/* Complex */
+
+			static Complex conj(Complex);
+			static double abs(Complex);
 
 		/* Classification */
 
@@ -243,8 +250,8 @@ class Complex {
 
 		/* Constants */
 
-			static double E;
-			static double PI;
+			const static double E;
+			const static double PI;
 		
 };
 
