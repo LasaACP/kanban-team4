@@ -55,31 +55,31 @@ class Complex {
 			Complex operator+(long int);
 			Complex operator+(float);
 			Complex operator+(double);
-			Complex operator+(Complex&);
+			Complex operator+(const Complex&);
 
 			Complex operator-(int);
 			Complex operator-(long int);
 			Complex operator-(float);
 			Complex operator-(double);
-			Complex operator-(Complex&);
+			Complex operator-(const Complex&);
 			
 			Complex operator*(int);
 			Complex operator*(long int);
 			Complex operator*(float);
 			Complex operator*(double);
-			Complex operator*(Complex&);
+			Complex operator*(const Complex&);
 			
 			Complex operator/(int);
 			Complex operator/(long int);
 			Complex operator/(float);
 			Complex operator/(double);
-			Complex operator/(Complex&);
+			Complex operator/(const Complex&);
 			
 			Complex operator%(int);
 			Complex operator%(long int);
 			Complex operator%(float);
 			Complex operator%(double);
-			Complex operator%(Complex&);
+			Complex operator%(const Complex&);
 
 		/* Increment/decrement */
 
@@ -151,31 +151,31 @@ class Complex {
 			Complex operator+=(long int);
 			Complex operator+=(float);
 			Complex operator+=(double);
-			Complex operator+=(Complex&);
+			Complex operator+=(const Complex&);
 
 			Complex operator-=(int);
 			Complex operator-=(long int);
 			Complex operator-=(float);
 			Complex operator-=(double);
-			Complex operator-=(Complex&);
+			Complex operator-=(const Complex&);
 			
 			Complex operator*=(int);
 			Complex operator*=(long int);
 			Complex operator*=(float);
 			Complex operator*=(double);
-			Complex operator*=(Complex&);
+			Complex operator*=(const Complex&);
 			
 			Complex operator/=(int);
 			Complex operator/=(long int);
 			Complex operator/=(float);
 			Complex operator/=(double);
-			Complex operator/=(Complex&);
+			Complex operator/=(const Complex&);
 			
 			Complex operator%=(int);
 			Complex operator%=(long int);
 			Complex operator%=(float);
 			Complex operator%=(double);
-			Complex operator%=(Complex&);
+			Complex operator%=(const Complex&);
 
 		/* Pointer */
 			
