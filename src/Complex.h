@@ -244,8 +244,8 @@ class Complex {
 
 		/* Complex */
 
-			double polarR();
-			double polarPhi();
+			double getR();
+			double getPhi();
 
 			static Complex rect(double r, double phi);
 
