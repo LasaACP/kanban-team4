@@ -571,9 +571,3 @@ Complex Complex::exp(Complex& c) {
 Complex Complex::cos(Complex& c) {
 	return (exp(c * Complex(0,1)) + exp((-c) * Complex(0,1)))/(2);
 }*/
-
-int main() {
-	Complex a(1,0), b(-1,1), c(2,-3), d(1,1);
-	std::cout << (c < d) << std::endl;
-	std::cout << (b >= d) << std::endl;
-}
